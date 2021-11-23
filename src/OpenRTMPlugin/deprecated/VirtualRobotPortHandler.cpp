@@ -248,12 +248,12 @@ void LinkDataOutPortHandler::inputDataFromSimulator(BodyRTCItem* bodyRTC)
             const size_t n = constraintForces.size();
             value.data.length(6*n);
             for(size_t i=0, j=0; i<n; i++){
-                value.data[j++] = constraintForces[i].point(0);
-                value.data[j++] = constraintForces[i].point(1);
-                value.data[j++] = constraintForces[i].point(2);
-                value.data[j++] = constraintForces[i].force(0);
-                value.data[j++] = constraintForces[i].force(1);
-                value.data[j++] = constraintForces[i].force(2);
+                value.data[j++] = constraintForces[i].position().x();
+                value.data[j++] = constraintForces[i].position().y();
+                value.data[j++] = constraintForces[i].position().z();
+                value.data[j++] = constraintForces[i].force().x();
+                value.data[j++] = constraintForces[i].force().y();
+                value.data[j++] = constraintForces[i].force().z();
             }
         }
     }

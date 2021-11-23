@@ -11,6 +11,7 @@
 #include <cnoid/CheckBox>
 #include <cnoid/ComboBox>
 #include <cnoid/MessageView>
+#include <cnoid/Archive>
 #include <rtm/CORBA_IORUtil.h>
 #include <QLabel>
 #include <QGridLayout>

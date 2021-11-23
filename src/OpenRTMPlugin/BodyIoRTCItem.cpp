@@ -33,6 +33,7 @@ public:
     bool createBodyIoRTC();
 
     // Virtual functions of ControllerIO
+    virtual std::string controllerName() const override;
     virtual Body* body() override;
     virtual std::string optionString() const override;
     virtual std::ostream& os() const override;
@@ -136,6 +137,12 @@ std::string BodyIoRTCItem::getDefaultRTCInstanceName() const
 }
 
 
+std::string BodyIoRTCItemImpl::controllerName() const
+{
+    return string();
+}
+
+
 Body* BodyIoRTCItemImpl::body()
 {
     if(io){
@@ -182,7 +189,8 @@ bool BodyIoRTCItemImpl::isNoDelayMode() const
 
 bool BodyIoRTCItemImpl::setNoDelayMode(bool on)
 {
-    return self->setNoDelayMode(on);
+    self->setNoDelayMode(on);
+    return true;
 }
         
 
